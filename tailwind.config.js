@@ -4,7 +4,12 @@ import { require } from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
 export const darkMode = ["class"];
-export const content = ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"];
+export const content = [
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.md",
+  ];
 export const theme = {
   container: {
     center: true,
