@@ -1,5 +1,3 @@
-import Link from "next/link";
-import React, { use } from "react";
 
 interface NewsCardProps {
     title: string;

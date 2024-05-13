@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "../../../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -28,7 +28,7 @@ export const HoverEffect = ({
         >
             {items.map((item, idx) => (
                 <Link
-                    to={item.link || '/'}
+                    to={item.link || "/"}
                     key={item?.link}
                     target="_blank"
                     className="relative group  block p-2 h-full w-full"
@@ -54,9 +54,7 @@ export const HoverEffect = ({
                     </AnimatePresence>
                     <Card>
                         <Avatar>
-                            <AvatarImage
-                                src={item.imageUrl}
-                            />
+                            <AvatarImage src={item.imageUrl} />
                             <AvatarFallback>{item.title}</AvatarFallback>
                         </Avatar>
                         <CardTitle>{item.title}</CardTitle>
