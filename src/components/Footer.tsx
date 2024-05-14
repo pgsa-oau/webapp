@@ -1,34 +1,33 @@
-'use client';
-import React from "react";
-import { NavigationMenu } from "@/components/ui/navigation-menu";
-import { Card } from "@/components/ui/card";
-import Link from "next/link";
+import { NavigationMenu } from "../components/ui/navigation-menu";
+import { Card } from "../components/ui/card";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
-        <Card className="md:container flex flex-col gap-4 md:flex-row items-center align-middle justify-between py-4 md:py-10 text-primary z-[1000] border-0 shadow-none">
+        <div className="bg-slate-200">
+            <div className="md:container flex flex-col gap-4 md:flex-row items-center align-middle justify-between py-4 md:py-4 text-primary z-[1000] border-0 shadow-none">
             <div className="flex flex-col md:flex-row justify-between items-center align-middle gap-4">
                 <NavigationMenu className="neon-border">
-                    <Link href="/#aboutUs" passHref>
+                    <Link to="/#aboutUs">
                         About Us
                     </Link>
                 </NavigationMenu>
                 <NavigationMenu className="neon-border">
-                    <Link href="/#aimsAndObjectives" passHref>
+                    <Link to="/#aimsAndObjectives">
                         Aims and Objectives
                     </Link>
                 </NavigationMenu>
                 <NavigationMenu className="neon-border">
-                    <Link href="/contact_us" passHref>
+                    <Link to="/contact_us">
                         Contact Us
                     </Link>
                 </NavigationMenu>
                 <NavigationMenu className="neon-border">
                     <Link
-                        href="/devs"
-                        passHref
+                        to="/devs"
+
                         className="bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-pink-500"
                     >
                         Meet the Devs
@@ -36,7 +35,9 @@ const Footer = () => {
                 </NavigationMenu>
             </div>
             <div>&copy; {year} OAU PGSA</div>
-        </Card>
+        </div>
+        </div>
+
     );
 };
 

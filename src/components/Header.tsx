@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
+import { useState } from "react";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -9,16 +7,15 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import Link from "next/link";
+} from "../components/ui/navigation-menu";
+import { NavLink } from "react-router-dom";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@/components/ui/accordion";
-import { ModeToggle } from "./ui/toggle-theme";
-import { LuMenu } from "react-icons/lu";
+} from "../components/ui/accordion";
+import { Menu } from "lucide-react";
 
 const navigationItems = [
     {
@@ -41,7 +38,7 @@ const navigationItems = [
         title: "Membership",
         links: [
             {
-                href: "https://docs.google.com/forms/d/e/1FAIpQLSe1_rMRH4gPIi-JonVGVC7mlXf_1dnv6Vwy0Dn6LMoa2OubCQ/viewform?usp=sf_link",
+                href: "https://docs.google.com/forms/d/e/1FAIpQLSe1_rMRH4gPIi-JonVGVC7mlXf_1dnv6Vwy0Dn6LMoa2OubCQ/viewform?usp=sf_NavLink",
                 text: "Become a Member",
                 target: "_blank",
             },
@@ -88,10 +85,10 @@ const Header = () => {
     };
 
     return (
-        <nav className="bg-background p-2 md:py-3 font-san sticky top-0 z-[1000]">
+        <nav className="bg-slate-200 p-2 md:py-3 font-san sticky top-0 z-[1000]">
             <div className="md:container flex items-center justify-between">
                 <NavigationMenu>
-                    <Link href="/" passHref>
+                    <NavLink to="/">
                         <div className="flex gap-1 items-center justify-center">
                             <div className="avatar hidden lg:flex">
                                 <div className="rounded-full w-6">
@@ -109,11 +106,7 @@ const Header = () => {
                                 OAU PGSA
                             </div>
                         </div>
-                    </Link>
-                </NavigationMenu>
-
-                <NavigationMenu>
-                    <ModeToggle />
+                    </NavLink>
                 </NavigationMenu>
 
                 <div className="hidden lg:flex">
@@ -126,11 +119,10 @@ const Header = () => {
                                             <NavigationMenuTrigger className="bg-transparent neon-border">
                                                 {item.title}
                                             </NavigationMenuTrigger>
-                                            <NavigationMenuContent className="flex flex-col w-[400px] gap-3 p-4 md:w-[500px] lg:w-[600px]">
+                                            <NavigationMenuContent className="flex bg-slate-200 flex-col items-start w-[400px] gap-3 p-4 md:w-[500px] lg:w-[600px]">
                                                 {item.links.map((link) => (
-                                                    <Link
-                                                        href={link.href}
-                                                        passHref
+                                                    <NavLink
+                                                        to={link.href}
                                                         key={link.text}
                                                         target={
                                                             link.target
@@ -143,22 +135,21 @@ const Header = () => {
                                                         >
                                                             {link.text}
                                                         </NavigationMenuLink>
-                                                    </Link>
+                                                    </NavLink>
                                                 ))}
                                             </NavigationMenuContent>
                                         </>
                                     ) : (
-                                        <Link
-                                            href={item.href}
-                                            legacyBehavior
-                                            passHref
+                                        <NavLink
+                                            to={item.href}
+                                            key={item.title}
                                         >
                                             <NavigationMenuLink
                                                 className={`${navigationMenuTriggerStyle()} bg-transparent neon-border text-wrap`}
                                             >
                                                 {item.title}
                                             </NavigationMenuLink>
-                                        </Link>
+                                        </NavLink>
                                     )}
                                 </NavigationMenuItem>
                             ))}
@@ -166,15 +157,15 @@ const Header = () => {
                     </NavigationMenu>
                 </div>
 
-                <div className="lg:hidden" onClick={toggleMenu}>
-                    <LuMenu className="h-6 w-6" />
+                <div className="lg:hidden">
+                    <Menu fill="purple" onClick={toggleMenu} />
                 </div>
             </div>
 
             {isOpen && (
                 <div>
-                    <NavigationMenu>
-                        <NavigationMenuList className="flex flex-col items-start align-middle">
+                    <NavigationMenu className="max-w-full justify-start">
+                        <NavigationMenuList className="flex bg-slate-200 flex-col items-start align-middle">
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
                                     {item.links ? (
@@ -192,20 +183,20 @@ const Header = () => {
                                                     <AccordionTrigger className="text-sm hover:no-underline ps-4">
                                                         {item.title}
                                                     </AccordionTrigger>
-                                                    <AccordionContent className="flex flex-col gap-2 p-0">
+                                                    <AccordionContent className="flex flex-col gap-2 p-0 text-ellipsis overflow-hidden">
                                                         {item.links.map(
                                                             (link) => (
-                                                                <Link
-                                                                    href={
+                                                                <NavLink
+                                                                    to={
                                                                         link.href
                                                                     }
-                                                                    passHref
                                                                     key={
                                                                         link.text
                                                                     }
+                                                                    className="text-ellipsis overflow-hidden"
                                                                 >
                                                                     <NavigationMenuLink
-                                                                        className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-violet-300 text-wrap`}
+                                                                        className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-violet-300 text-wrap text-ellipsis overflow-hidden`}
                                                                         onClick={
                                                                             toggleMenu
                                                                         }
@@ -214,7 +205,7 @@ const Header = () => {
                                                                             link.text
                                                                         }
                                                                     </NavigationMenuLink>
-                                                                </Link>
+                                                                </NavLink>
                                                             )
                                                         )}
                                                     </AccordionContent>
@@ -222,18 +213,14 @@ const Header = () => {
                                             </Accordion>
                                         </>
                                     ) : (
-                                        <Link
-                                            href={item.href}
-                                            legacyBehavior
-                                            passHref
-                                        >
+                                        <NavLink to={item.href}>
                                             <NavigationMenuLink
-                                                className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-violet-300 text-sm text-wrap`}
+                                                className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-violet-300 text-sm text-wrap text-ellipsis overflow-hidden`}
                                                 onClick={toggleMenu}
                                             >
                                                 {item.title}
                                             </NavigationMenuLink>
-                                        </Link>
+                                        </NavLink>
                                     )}
                                 </NavigationMenuItem>
                             ))}
