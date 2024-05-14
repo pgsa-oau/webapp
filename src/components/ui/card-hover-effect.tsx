@@ -52,7 +52,7 @@ export const HoverEffect = ({
                             />
                         )}
                     </AnimatePresence>
-                    <Card>
+                    <Card className="bg-slate-200">
                         <Avatar>
                             <AvatarImage src={item.imageUrl} />
                             <AvatarFallback>{item.title}</AvatarFallback>
