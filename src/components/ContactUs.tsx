@@ -1,5 +1,3 @@
-"use client";
-
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -10,16 +8,16 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+} from "../components/ui/form";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
+import { Textarea } from "../components/ui/textarea";
 import {
     Card,
     CardContent,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card";
+} from "../components/ui/card";
 
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
@@ -85,6 +83,7 @@ const ContactUs = () => {
                                         <FormControl>
                                             <Input
                                                 placeholder="first name last name"
+                                                className="text-black"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -102,6 +101,7 @@ const ContactUs = () => {
                                         <FormControl>
                                             <Input
                                                 placeholder="youremail@email.com"
+                                                className="text-black"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -120,6 +120,7 @@ const ContactUs = () => {
                                     <FormControl>
                                         <Textarea
                                             placeholder="Type your message here."
+                                            className="text-black"
                                             {...field}
                                         />
                                     </FormControl>

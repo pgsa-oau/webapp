@@ -21,6 +21,7 @@ const navigationItems = [
     {
         title: "About",
         href: "/#aboutUs",
+        isScrollLink: true,
     },
     {
         title: "Notice Board",
@@ -43,7 +44,6 @@ const navigationItems = [
                 target: "_blank",
             },
             { href: "/members", text: "Members" },
-            { href: "/members#honorary-members", text: "Honorary Member" },
         ],
     },
     {

@@ -6,6 +6,7 @@ import Root from "./routes/root.tsx";
 import HomePage from "./routes/home-page.tsx";
 import NoticeBoard from "./routes/notice-board.tsx";
 import NewsDetailsPage from "./routes/news-details.tsx";
+import Contact from "./routes/contact-us.tsx";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +25,12 @@ const router = createBrowserRouter([
             {
               path: "/board/:postId",
               element: <NewsDetailsPage />,
+            },
+            {
+              path: "/contact_us",
+              element: <Contact />,
             }
+
         ],
     },
 ]);

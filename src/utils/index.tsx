@@ -2,7 +2,6 @@ import { getStoryblokApi, ISbRichtext, renderRichText } from "@storyblok/react/r
 import DOMPurify from "isomorphic-dompurify";
 import { newsPost } from "../types";
 
-
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -65,5 +64,15 @@ export async function fetchNewsDetails(postId: string) {
         tag: postData.content.tag,
     };
 }
+
+export const handleScrollToSection = () => {
+    const sectionId = window.location.hash;
+    if (sectionId) {
+        const sectionElement = document.querySelector(sectionId);
+        if (sectionElement) {
+            sectionElement.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+};
 
 

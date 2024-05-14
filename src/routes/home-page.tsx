@@ -5,7 +5,7 @@ import CarouselSection from "../components/Carousel";
 import HeroSection from "../components/HeroSection";
 import { pageData } from "../components/pageData";
 import NewsCard from "../components/ui/NewsCard";
-import { fetchNews } from "../utils";
+import { fetchNews, handleScrollToSection } from "../utils";
 import { post } from "../types";
 
 const HomePage = () => {
@@ -19,8 +19,9 @@ const HomePage = () => {
             setRecentNews(recentNews);
         };
 
+        handleScrollToSection();
         fetchRecentNews();
-    }, []);
+    }, [window.location.pathname]);
 
     return (
         <main className="flex h-full min-h-[95vh] flex-col gap-6 items-center justify-between p-2 z-50">
