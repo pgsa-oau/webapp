@@ -3,7 +3,7 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "../components/ui/accordion";
 
 import {
     Card,
@@ -11,7 +11,7 @@ import {
     CardDescription,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card";
+} from "../components/ui/card";
 
 import { pageData } from "./pageData";
 

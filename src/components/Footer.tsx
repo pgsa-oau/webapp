@@ -1,5 +1,4 @@
 import { NavigationMenu } from "../components/ui/navigation-menu";
-import { Card } from "../components/ui/card";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
