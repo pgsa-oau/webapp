@@ -29,7 +29,7 @@ const NewsDetailsPage = () => {
                     </div>
                 </div>
             ) : (
-                <div className="max-w-2xl mx-auto antialiased pt-4 relative z-50">
+                <div className="mx-auto antialiased pt-4 relative z-50">
                     <div className="mb-10">
                         <h1 className={twMerge("text-4xl mb-4")}>
                             {newsData.title}

@@ -30,8 +30,9 @@
 
 
 .gradient-text {
-    background: linear-gradient(to right, rgb(224, 71, 94), rgb(73, 3, 84), rgb(3, 5, 139));
+    background: linear-gradient(to right, rgb(241, 47, 76), rgb(192, 38, 216), rgb(31, 61, 183));
     -webkit-background-clip: text;
+    color: white;
     background-clip: text;
     color: transparent;
   }
@@ -41,7 +42,7 @@
     border-bottom: 2px solid transparent;
   }
   50% {
-    border-bottom: 2px solid #9021df;
+    border-bottom: 2px solid #9413f0;
   }
   100% {
     border-bottom: 2px solid transparent;
@@ -69,7 +70,7 @@
     @apply text-primary;
     @apply hover:text-cyan-400;
     cursor: pointer;
-    color: darkviolet;
+    color: rgb(25, 217, 235);
   }
 }
 

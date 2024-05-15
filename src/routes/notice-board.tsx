@@ -20,7 +20,7 @@ const NoticeBoard = () => {
     , []);
 
     return (
-        <div className="space-y-5 relative z-50 text-white md:min-h-[87vh]">
+        <div className="space-y-5 relative z-50 text-white">
             <section className="font-medium space-y-4">
                 <Card className="bg-transparent border-0">
                     <CardHeader>
