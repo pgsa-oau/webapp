@@ -10,34 +10,37 @@ import Contact from "./routes/contact-us.tsx";
 import DevsPage from "./routes/devs.tsx";
 
 const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
         path: "/",
-        element: <Root />,
-        errorElement: <ErrorPage />,
-        children: [
-            {
-                path: "/",
-                element: <HomePage />,
-            },
-            {
-              path: "/board",
-              element: <NoticeBoard />,
-            },
-            {
-              path: "/board/:postId",
-              element: <NewsDetailsPage />,
-            },
-            {
-              path: "/contact_us",
-              element: <Contact />,
-            },
-            {
-              path: "devs",
-              element: <DevsPage />,
-            }
-
-        ],
-    },
+        element: <HomePage />,
+      },
+      {
+        path: "/board",
+        element: <NoticeBoard />,
+      },
+      {
+        path: "/board/:postId",
+        element: <NewsDetailsPage />,
+      },
+      {
+        path: "/contact_us",
+        element: <Contact />,
+      },
+      {
+        path: "/devs",
+        element: <DevsPage />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
+      }
+    ],
+  },
 ]);
 
 

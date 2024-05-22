@@ -17,9 +17,9 @@ const NewsDetailsPage = () => {
     }, [params.postId]);
 
     return (
-        <TracingBeam className="px-6 relative z-40 text-white">
+        <TracingBeam className="px-6 relative z-40">
             {newsData === null ? (
-                <div className="flex flex-col items-center justify-center h-screen relative z-50 text-white gap-8">
+                <div className="flex flex-col items-center justify-center h-screen relative z-50 gap-8">
                     <div className="flex flex-col space-y-3 w-full">
                         <Skeleton className="h-[125px] md:h-96 w-[250px] md:w-full rounded-xl" />
                         <div className="space-y-2">
