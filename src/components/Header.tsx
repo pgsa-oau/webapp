@@ -102,7 +102,7 @@ const Header = () => {
                                 </div>
                             </div>
 
-                            <div className="font-extrabold text-xs lg:text-xl text-zinc-100">
+                            <div className="font-extrabold text-xs lg:text-xl gradient-text animate-pulse">
                                 OAU PGSA
                             </div>
                         </div>
@@ -158,7 +158,7 @@ const Header = () => {
                 </div>
 
                 <div className="lg:hidden">
-                    <Menu fill="purple" onClick={toggleMenu} />
+                    <Menu fill="aqua" stroke="aquamarine" onClick={toggleMenu} />
                 </div>
             </div>
 
@@ -183,7 +183,7 @@ const Header = () => {
                                                     <AccordionTrigger className="text-sm hover:no-underline ps-4">
                                                         {item.title}
                                                     </AccordionTrigger>
-                                                    <AccordionContent className="flex flex-col gap-2 p-0 text-ellipsis overflow-hidden text-background font-semibold">
+                                                    <AccordionContent className="flex flex-col gap-2 p-0 text-ellipsis overflow-hidden font-semibold">
                                                         {item.links.map(
                                                             (link) => (
                                                                 <NavLink

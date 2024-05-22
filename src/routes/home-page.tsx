@@ -10,7 +10,7 @@ const HomePage = () => {
         <main className="flex h-full min-h-[95vh] flex-col gap-4 items-center justify-between p-2 z-50">
             <CarouselSection />
 
-            <div className="flex flex-col items-center p-4 gap-2 z-50 border-2 border-transparent bg-clip-padding backdrop-filter backdrop-blur-xl rounded-2xl animate-pulse-gradient w-1/3">
+            <div className="flex flex-col items-center p-4 gap-2 z-50 border-2 border-transparent bg-clip-padding backdrop-filter backdrop-blur-xl rounded-2xl animate-pulse-gradient w-full md:w-1/2">
                 <h2 className="text-3xl font-bold text-secondary animate-pulse">
                     Latest Information!
                 </h2>
@@ -18,7 +18,7 @@ const HomePage = () => {
                 <Button
                     variant="outline"
                     size="sm"
-                    className="px-2 rounded-sm text-white font-semibold"
+                    className="px-2 rounded-sm text-white font-semibold animate-pulse"
                 >
                     <Link to="/board">Visit Our Notice Board</Link>
                 </Button>
