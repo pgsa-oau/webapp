@@ -88,6 +88,6 @@ Once these steps are completed, the project will be deployed for the admin. The 
 # Contributors:
 Taofiq Sulayman
 
-## Contact:
+#### Contact:
 - GitHub: [GitHub Profile](https://github.com/taofiqsulayman)
 - Email: sulaymantaofiq@gmail.com
