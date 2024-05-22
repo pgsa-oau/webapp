@@ -83,7 +83,6 @@ const ContactUs = () => {
                                         <FormControl>
                                             <Input
                                                 placeholder="first name last name"
-                                                className="text-black"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -101,7 +100,6 @@ const ContactUs = () => {
                                         <FormControl>
                                             <Input
                                                 placeholder="youremail@email.com"
-                                                className="text-black"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -120,7 +118,6 @@ const ContactUs = () => {
                                     <FormControl>
                                         <Textarea
                                             placeholder="Type your message here."
-                                            className="text-black"
                                             {...field}
                                         />
                                     </FormControl>
@@ -136,7 +133,7 @@ const ContactUs = () => {
                                 <div className="text-red-500">{feedback}</div>
                             ))}
 
-                        <Button type="submit">Submit</Button>
+                        <Button variant='outline' size='lg' type="submit" className="text-white font-semibold">Submit</Button>
                     </form>
                 </Form>
             </CardContent>

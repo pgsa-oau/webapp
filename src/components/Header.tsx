@@ -85,7 +85,7 @@ const Header = () => {
     };
 
     return (
-        <nav className="bg-slate-200 p-2 md:py-3 font-san sticky top-0 z-[1000]">
+        <nav className="p-2 md:py-3 sticky top-0 z-[1000] bg-background">
             <div className="md:container flex items-center justify-between">
                 <NavigationMenu>
                     <NavLink to="/">
@@ -102,24 +102,24 @@ const Header = () => {
                                 </div>
                             </div>
 
-                            <div className="font-extrabold text-transparent text-xs lg:text-xl bg-clip-text bg-gradient-to-r from-violet-600 to-pink-500">
+                            <div className="font-extrabold text-xs lg:text-xl gradient-text animate-pulse">
                                 OAU PGSA
                             </div>
                         </div>
                     </NavLink>
                 </NavigationMenu>
 
-                <div className="hidden lg:flex">
+                <div className="hidden lg:flex text-secondary font-bold">
                     <NavigationMenu>
                         <NavigationMenuList>
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
                                     {item.links ? (
                                         <>
-                                            <NavigationMenuTrigger className="bg-transparent neon-border">
+                                            <NavigationMenuTrigger>
                                                 {item.title}
                                             </NavigationMenuTrigger>
-                                            <NavigationMenuContent className="flex bg-slate-200 flex-col items-start w-[400px] gap-3 p-4 md:w-[500px] lg:w-[600px]">
+                                            <NavigationMenuContent className="flex border-0 flex-col items-start w-[400px] gap-3 p-4 md:w-[500px] lg:w-[600px] text-background font-semibold">
                                                 {item.links.map((link) => (
                                                     <NavLink
                                                         to={link.href}
@@ -131,7 +131,7 @@ const Header = () => {
                                                         }
                                                     >
                                                         <NavigationMenuLink
-                                                            className={`${navigationMenuTriggerStyle()} bg-transparent neon-border text-wrap`}
+                                                            className={`${navigationMenuTriggerStyle()} text-wrap`}
                                                         >
                                                             {link.text}
                                                         </NavigationMenuLink>
@@ -145,7 +145,7 @@ const Header = () => {
                                             key={item.title}
                                         >
                                             <NavigationMenuLink
-                                                className={`${navigationMenuTriggerStyle()} bg-transparent neon-border text-wrap`}
+                                                className={`${navigationMenuTriggerStyle()} text-wrap`}
                                             >
                                                 {item.title}
                                             </NavigationMenuLink>
@@ -158,14 +158,14 @@ const Header = () => {
                 </div>
 
                 <div className="lg:hidden">
-                    <Menu fill="purple" onClick={toggleMenu} />
+                    <Menu fill="aqua" stroke="aquamarine" onClick={toggleMenu} />
                 </div>
             </div>
 
             {isOpen && (
                 <div>
                     <NavigationMenu className="max-w-full justify-start">
-                        <NavigationMenuList className="flex bg-slate-200 flex-col items-start align-middle">
+                        <NavigationMenuList className="flex flex-col items-start align-middle border-0">
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
                                     {item.links ? (
@@ -183,7 +183,7 @@ const Header = () => {
                                                     <AccordionTrigger className="text-sm hover:no-underline ps-4">
                                                         {item.title}
                                                     </AccordionTrigger>
-                                                    <AccordionContent className="flex flex-col gap-2 p-0 text-ellipsis overflow-hidden">
+                                                    <AccordionContent className="flex flex-col gap-2 p-0 text-ellipsis overflow-hidden font-semibold">
                                                         {item.links.map(
                                                             (link) => (
                                                                 <NavLink
@@ -196,7 +196,7 @@ const Header = () => {
                                                                     className="text-ellipsis overflow-hidden"
                                                                 >
                                                                     <NavigationMenuLink
-                                                                        className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-violet-300 text-wrap text-ellipsis overflow-hidden`}
+                                                                        className={`${navigationMenuTriggerStyle()} text-wrap text-ellipsis overflow-hidden`}
                                                                         onClick={
                                                                             toggleMenu
                                                                         }
@@ -215,7 +215,7 @@ const Header = () => {
                                     ) : (
                                         <NavLink to={item.href}>
                                             <NavigationMenuLink
-                                                className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-violet-300 text-sm text-wrap text-ellipsis overflow-hidden`}
+                                                className={`${navigationMenuTriggerStyle()} text-sm text-wrap text-ellipsis overflow-hidden`}
                                                 onClick={toggleMenu}
                                             >
                                                 {item.title}

@@ -3,10 +3,9 @@ import { Button } from "./ui/button";
 import {
     Card,
     CardContent,
-    CardDescription,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card";
+} from "../components/ui/card";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 interface HeroSectionProps {

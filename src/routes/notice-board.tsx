@@ -10,6 +10,7 @@ import { fetchNews } from "../utils";
 import NewsCard from "../components/ui/NewsCard";
 import { post } from "../types";
 import { useEffect, useState } from "react";
+import { Skeleton } from "../components/ui/skeleton";
 
 const NoticeBoard = () => {
     const [news, setNews] = useState([]);
@@ -20,7 +21,7 @@ const NoticeBoard = () => {
     , []);
 
     return (
-        <div className="space-y-5 relative z-50 text-white md:min-h-[87vh]">
+        <div className="space-y-5 relative z-50">
             <section className="font-medium space-y-4">
                 <Card className="bg-transparent border-0">
                     <CardHeader>
@@ -36,17 +37,31 @@ const NoticeBoard = () => {
                             the latest updates.
                         </CardDescription>
 
-                        <div className="flex flex-col md:flex-row md:flex-wrap gap-4">
-                            {news.map((post: post) => (
-                                <Link
-                                    key={post.id}
-                                    to={`/board/${post.slug}`}
-                                    className="w-full md:w-[30%]"
-                                >
-                                    <NewsCard key={post.id} {...post} />
-                                </Link>
-                            ))}
-                        </div>
+                        {news.length > 0 ? (
+                            <div className="flex flex-col md:flex-row md:flex-wrap gap-4">
+                                {news.map((post: post) => (
+                                    <Link
+                                        key={post.id}
+                                        to={`/board/${post.slug}`}
+                                        className="w-full md:w-[30%]"
+                                    >
+                                        <NewsCard key={post.id} {...post} />
+                                    </Link>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="flex flex-col md:flex-row md:flex-wrap gap-4">
+                                <div className="w-full md:w-[30%]">
+                                    <Skeleton className="h-[125px] md:h-96 w-full rounded-xl" />
+                                </div>
+                                <div className="w-full md:w-[30%]">
+                                    <Skeleton className="h-[125px] md:h-96 w-full rounded-xl" />
+                                </div>
+                                <div className="w-full md:w-[30%]">
+                                    <Skeleton className="h-[125px] md:h-96 w-full rounded-xl" />
+                                </div>
+                            </div>
+                        )}
                     </CardContent>
                 </Card>
             </section>

@@ -1,8 +1,5 @@
-"use client";
-
-import * as React from "react";
 import { motion } from "framer-motion";
-import { ImagesSlider } from "@/components/ui/image-slider";
+import { ImagesSlider } from "../components/ui/image-slider";
 
 const CarouselSection = () => {
     const images = [
@@ -14,7 +11,7 @@ const CarouselSection = () => {
     ];
 
     return (
-        <ImagesSlider className="md:h-[40rem] h-[20rem] z-50" images={images}>
+        <ImagesSlider className="md:h-[36rem] h-[18rem] z-50 rounded-sm md:rounded-3xl" images={images}>
             <motion.div
                 initial={{
                     opacity: 0,
