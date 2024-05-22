@@ -11,7 +11,7 @@ export default function ErrorPage() {
     return (
         <div
             id="error-page"
-            className="flex flex-col items-center justify-center h-screen relative z-50 text-white gap-8"
+            className="flex flex-col items-center justify-center h-screen relative z-50 gap-8"
         >
             <TriangleAlert size={48} />
             <h1 className="text-4xl font-bold mb-4">Oops!</h1>

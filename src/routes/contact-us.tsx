@@ -11,10 +11,10 @@ import {
 const Contact = () => {
     return (
         <div className="flex w-full gap-4 z-50">
-            <section className="font-medium w-full space-y-4 text-white py-4">
-                <Card className="bg-transparent">
+            <section className="font-medium w-full space-y-4 py-4">
+                <Card>
                     <CardHeader>
-                        <CardTitle className="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-violet-600 to-pink-400">
+                        <CardTitle className="font-extrabold text-xl bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-pink-500">
                             Contact Us
                         </CardTitle>
                     </CardHeader>
