@@ -85,7 +85,7 @@ const Header = () => {
     };
 
     return (
-        <nav className="p-2 md:py-3 sticky top-0 z-[1000] bg-background">
+        <nav className="p-2 md:py-3 sticky top-0 z-[1000] bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-filter backdrop-blur-lg">
             <div className="md:container flex items-center justify-between">
                 <NavigationMenu>
                     <NavLink to="/">
@@ -109,7 +109,7 @@ const Header = () => {
                     </NavLink>
                 </NavigationMenu>
 
-                <div className="hidden lg:flex text-secondary font-bold">
+                <div className="hidden lg:flex font-bold">
                     <NavigationMenu>
                         <NavigationMenuList>
                             {navigationItems.map((item) => (
@@ -119,7 +119,7 @@ const Header = () => {
                                             <NavigationMenuTrigger>
                                                 {item.title}
                                             </NavigationMenuTrigger>
-                                            <NavigationMenuContent className="flex border-0 flex-col items-start w-[400px] gap-3 p-4 md:w-[500px] lg:w-[600px] text-background font-semibold">
+                                            <NavigationMenuContent className="flex border-0 flex-col items-start w-[400px] gap-3 p-4 md:w-[500px] lg:w-[600px] text-black font-semibold backdrop-filter backdrop-blur-lg">
                                                 {item.links.map((link) => (
                                                     <NavLink
                                                         to={link.href}
@@ -158,7 +158,11 @@ const Header = () => {
                 </div>
 
                 <div className="lg:hidden">
-                    <Menu fill="aqua" stroke="aquamarine" onClick={toggleMenu} />
+                    <Menu
+                        fill="aqua"
+                        stroke="aquamarine"
+                        onClick={toggleMenu}
+                    />
                 </div>
             </div>
 
