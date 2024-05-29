@@ -85,7 +85,7 @@ const Header = () => {
     };
 
     return (
-        <nav className="p-2 md:py-3 sticky top-0 z-[1000] bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-filter backdrop-blur-lg">
+        <nav className="p-2 md:py-3 fixed w-full top-0 z-[1000] bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-filter backdrop-blur-lg">
             <div className="md:container flex items-center justify-between">
                 <NavigationMenu>
                     <NavLink to="/">
@@ -102,7 +102,7 @@ const Header = () => {
                                 </div>
                             </div>
 
-                            <div className="font-extrabold text-xs lg:text-xl gradient-text animate-pulse">
+                            <div className="font-extrabold text-xs lg:text-xl gradient-text">
                                 OAU PGSA
                             </div>
                         </div>

@@ -21,7 +21,7 @@ const NoticeBoard = () => {
     , []);
 
     return (
-        <div className="space-y-5 relative z-50">
+        <div className="space-y-5 relative z-50 pt-16 md:container">
             <section className="font-medium space-y-4">
                 <Card className="bg-transparent border-0">
                     <CardHeader>
@@ -38,7 +38,7 @@ const NoticeBoard = () => {
                         </CardDescription>
 
                         {news.length > 0 ? (
-                            <div className="flex flex-col md:flex-row md:flex-wrap gap-4">
+                            <div className="flex flex-col md:flex-row md:flex-wrap gap-4 justify-between">
                                 {news.map((post: post) => (
                                     <Link
                                         key={post.id}

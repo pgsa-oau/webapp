@@ -20,7 +20,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     buttonText,
 }) => {
     return (
-        <Card className="shadow-lg bg-white md:w-1/2 text-pretty md:text-base md:font-medium md:leading-normal md:hover:scale-105">
+        <Card className="shadow-lg md:w-1/2 text-pretty md:text-base md:font-medium md:leading-normal md:hover:scale-105">
             <CardHeader>
                 <CardTitle className="font-extrabold text-xl gradient-text">
                     {title}

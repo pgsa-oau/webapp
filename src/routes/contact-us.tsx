@@ -10,7 +10,7 @@ import {
 
 const Contact = () => {
     return (
-        <div className="flex w-full gap-4 z-50">
+        <div className="md:container pt-20 flex w-full gap-4 z-50">
             <section className="font-medium w-full space-y-4 py-4">
                 <Card>
                     <CardHeader>

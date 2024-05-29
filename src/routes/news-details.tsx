@@ -17,7 +17,7 @@ const NewsDetailsPage = () => {
     }, [params.postId]);
 
     return (
-        <TracingBeam className="px-6 relative z-40">
+        <div className="px-6 z-40 md:container pt-20">
             {newsData === null ? (
                 <div className="flex flex-col items-center justify-center h-screen relative z-50 gap-8">
                     <div className="flex flex-col space-y-3 w-full">
@@ -51,7 +51,7 @@ const NewsDetailsPage = () => {
                     </div>
                 </div>
             )}
-        </TracingBeam>
+        </div>
     );
 };
 export default NewsDetailsPage;
