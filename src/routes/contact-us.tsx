@@ -10,7 +10,7 @@ import {
 
 const Contact = () => {
     return (
-        <div className="flex w-full gap-4 z-50">
+        <div className="md:container pt-20 flex w-full gap-4 z-50">
             <section className="font-medium w-full space-y-4 py-4">
                 <Card>
                     <CardHeader>
@@ -51,9 +51,9 @@ const Contact = () => {
 
             <section className="hidden md:flex justify-center items-center w-full py-4">
                 <img
-                    src="/public/images/image1.jpg"
+                    src="/images/contact_us.svg"
                     alt="Side Image"
-                    className="h-full w-full rounded-xl object-cover"
+                    className="h-full w-full rounded-xl object-contain"
                 />
             </section>
         </div>

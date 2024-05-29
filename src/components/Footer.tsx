@@ -5,7 +5,7 @@ const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
-        <div className="sticky bottom-0 z-[1000] px-4 backdrop-filter backdrop-blur-md font-semibold">
+        <div className="z-[1000] px-4 backdrop-filter backdrop-blur-md font-semibold">
             <div className="md:container bg-none flex gap-4 flex-row items-center align-middle justify-between py-4 md:py-4 text-primary border-0 shadow-none">
                 <div className="flex flex-col md:flex-row justify-between items-center align-middle gap-4">
                     <NavigationMenu className="neon-border hidden md:block">

@@ -1,43 +1,50 @@
-import { Link } from "react-router-dom";
 import AimsAndObjectives from "../components/AimsAndObjectives";
 import CarouselSection from "../components/Carousel";
 import HeroSection from "../components/HeroSection";
 import { pageData } from "../components/pageData";
-import { Button } from "../components/ui/button";
 
 const HomePage = () => {
     return (
-        <main className="flex h-full min-h-[95vh] flex-col gap-4 items-center justify-between p-2 z-50">
+        <main className="flex h-full min-h-[100vh] flex-col gap-4 items-center justify-between p-0 z-50 m-0">
             <CarouselSection />
-
-            <div className="flex flex-col items-center p-4 gap-2 z-50 border-2 border-transparent bg-clip-padding backdrop-filter backdrop-blur-xl rounded-2xl animate-pulse-gradient w-full md:w-1/2">
-                <h2 className="text-3xl font-bold text-secondary animate-pulse">
-                    Latest Information!
-                </h2>
-
-                <Button
-                    variant="outline"
-                    size="sm"
-                    className="px-2 rounded-sm text-white font-semibold animate-pulse"
-                >
-                    <Link to="/board">Visit Our Notice Board</Link>
-                </Button>
-            </div>
 
             <div
                 id="aboutUs"
-                className="py-2 flex flex-col md:flex-row gap-4 md:gap-6"
+                className="md:container pt-20 flex flex-col gap-4 md:gap-6"
             >
-                {pageData.heroAboutUs.map((item) => (
+                <section className="flex md:min-h-[30vh] items-center">
                     <HeroSection
-                        key={item.title}
-                        title={item.title}
-                        description={item.description}
+                        key={pageData.heroAboutUs[0].title}
+                        title={pageData.heroAboutUs[0].title}
+                        description={pageData.heroAboutUs[0].description}
                     />
-                ))}
+
+                    <section className="hidden md:flex justify-center items-center h-full md:w-2/5 py-4">
+                        <img
+                            src="/images/goals.svg"
+                            alt="Side Image"
+                            className="h-full w-full rounded-xl object-contain"
+                        />
+                    </section>
+                </section>
+
+                <section className="flex md:min-h-[30vh] items-center">
+                    <section className="hidden md:flex justify-center items-center h-full md:w-2/5 py-4">
+                        <img
+                            src="/images/shared_goals.svg"
+                            alt="Side Image"
+                            className="h-full w-full rounded-xl object-contain"
+                        />
+                    </section>
+                    <HeroSection
+                        key={pageData.heroAboutUs[1].title}
+                        title={pageData.heroAboutUs[1].title}
+                        description={pageData.heroAboutUs[1].description}
+                    />
+                </section>
             </div>
 
-            <section id="aimsAndObjectives" className="w-full py-2">
+            <section id="aimsAndObjectives" className="md:container w-full p-5">
                 <AimsAndObjectives />
             </section>
         </main>

@@ -2,9 +2,20 @@ import { HoverEffect } from "../components/ui/card-hover-effect";
 
 const DevsPage = () => {
     return (
-        <div className="mx-auto py-4 md:min-h-[87vh] relative z-50">
-            <p className="text-white text-2xl gradient-text">Meet our Development Team</p>
-            <HoverEffect items={team} />
+        <div className="mx-auto py-4 md:min-h-[87vh] z-50 md:container pt-20 flex flex-col items-center justify-center gap-4">
+            <p className="text-white text-2xl gradient-text">
+                Meet our Development Team
+            </p>
+            <section className="flex items-center">
+                <HoverEffect items={team} />
+                <section className="hidden md:flex justify-center items-center h-full md:w-2/5 py-4">
+                    <img
+                        src="/images/creative_team.svg"
+                        alt="Side Image"
+                        className="h-full w-full rounded-xl object-contain"
+                    />
+                </section>
+            </section>
         </div>
     );
 };
