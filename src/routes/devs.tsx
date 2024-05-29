@@ -10,7 +10,7 @@ const DevsPage = () => {
                 <HoverEffect items={team} />
                 <section className="hidden md:flex justify-center items-center h-full md:w-2/5 py-4">
                     <img
-                        src="/images/shared_goals.svg"
+                        src="/images/creative_team.svg"
                         alt="Side Image"
                         className="h-full w-full rounded-xl object-contain"
                     />
