@@ -1,5 +1,4 @@
 import { twMerge } from "tailwind-merge";
-import { TracingBeam } from "../components/ui/tracing-beam";
 import { fetchNewsDetails, sanitizeContent } from "../utils";
 import { post } from "../types";
 import { useEffect, useState } from "react";

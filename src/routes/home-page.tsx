@@ -10,15 +10,38 @@ const HomePage = () => {
 
             <div
                 id="aboutUs"
-                className="md:container pt-20 flex flex-col md:flex-row gap-4 md:gap-6"
+                className="md:container pt-20 flex flex-col gap-4 md:gap-6"
             >
-                {pageData.heroAboutUs.map((item) => (
+                <section className="flex md:min-h-[30vh] items-center">
                     <HeroSection
-                        key={item.title}
-                        title={item.title}
-                        description={item.description}
+                        key={pageData.heroAboutUs[0].title}
+                        title={pageData.heroAboutUs[0].title}
+                        description={pageData.heroAboutUs[0].description}
                     />
-                ))}
+
+                    <section className="hidden md:flex justify-center items-center h-full md:w-2/5 py-4">
+                        <img
+                            src="/images/goals.svg"
+                            alt="Side Image"
+                            className="h-full w-full rounded-xl object-contain"
+                        />
+                    </section>
+                </section>
+
+                <section className="flex md:min-h-[30vh] items-center">
+                    <section className="hidden md:flex justify-center items-center h-full md:w-2/5 py-4">
+                        <img
+                            src="/images/shared_goals.svg"
+                            alt="Side Image"
+                            className="h-full w-full rounded-xl object-contain"
+                        />
+                    </section>
+                    <HeroSection
+                        key={pageData.heroAboutUs[1].title}
+                        title={pageData.heroAboutUs[1].title}
+                        description={pageData.heroAboutUs[1].description}
+                    />
+                </section>
             </div>
 
             <section id="aimsAndObjectives" className="md:container w-full p-5">

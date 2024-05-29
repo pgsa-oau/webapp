@@ -18,7 +18,7 @@ import { pageData } from "./pageData";
 const AimsAndObjectives = () => {
     return (
         <>
-            <Card className="shadow-lg md:font-medium bg-none">
+            <Card className="shadow-sm md:font-medium bg-none border-none">
                 <CardHeader>
                     <CardTitle className="font-extrabold text-xl gradient-text">
                         Vision
