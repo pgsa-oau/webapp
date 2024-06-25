@@ -23,11 +23,15 @@ const NoticeBoard = () => {
         <div className="space-y-5 relative z-50 pt-16 md:container">
             <section className="font-medium space-y-4">
                 <div>
-                    <div className="flex flex-col justify-center items-center md:py-20">
-                        <div className="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-violet-600 to-pink-400">
-                            See Our E-Notice Board
+                    <div className="relative flex flex-col justify-center items-center h-60 md:h-[45vh] mt-4 bg-[url('/images/noticeboard.png')] bg-cover bg-center mb-4">
+                        <div className="p-4 backdrop-blur-sm bg-white/30 rounded-lg flex flex-col justify-center items-center">
+                            <h1 className="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-violet-600 to-pink-400">
+                                See Our E-Notice Board
+                            </h1>
+                            <p>
+                                Stay current with all the news and information
+                            </p>
                         </div>
-                        <p>Stay current with all the news and information</p>
                     </div>
                     <div className="flex flex-col gap-4">
                         {news.length > 0 ? (
@@ -53,8 +57,8 @@ const NoticeBoard = () => {
                 </div>
             </section>
 
-            <section className="font-medium space-y-8">
-                <Card className="bg-transparent border-0">
+            <section className="font-medium space-y-4">
+                <div className="bg-transparent border-0">
                     <CardHeader>
                         <CardTitle className="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-violet-600 to-pink-400">
                             Safety and Security
@@ -80,7 +84,7 @@ const NoticeBoard = () => {
                             </ul>
                         </CardDescription>
                     </CardContent>
-                </Card>
+                </div>
             </section>
 
             <section className="font-medium space-y-8">

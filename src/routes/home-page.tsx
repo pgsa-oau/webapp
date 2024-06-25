@@ -12,7 +12,7 @@ const HomePage = () => {
                 id="aboutUs"
                 className="md:container pt-20 flex flex-col gap-4 md:gap-6"
             >
-                <section className="flex md:min-h-[30vh] items-center">
+                <section className="flex md:min-h-[25vh] items-center">
                     <HeroSection
                         key={pageData.heroAboutUs[0].title}
                         title={pageData.heroAboutUs[0].title}
@@ -28,7 +28,7 @@ const HomePage = () => {
                     </section>
                 </section>
 
-                <section className="flex md:min-h-[30vh] items-center">
+                <section className="flex md:min-h-[25vh] items-center">
                     <section className="hidden md:flex justify-center items-center h-full md:w-2/5 py-4">
                         <img
                             src="/images/shared_goals.svg"

@@ -1,51 +1,39 @@
 import ContactUs from "../components/ContactUs";
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from "../components/ui/card";
-
 const Contact = () => {
     return (
         <div className="md:container pt-20 flex w-full gap-4 z-50">
-            <section className="font-medium w-full space-y-4 py-4">
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="font-extrabold text-xl bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-pink-500">
+            <section className="font-medium w-full space-y-4 py-4 px-4 flex flex-col justify-between gap-4 md:gap-12">
+                <div>
+                    <div>
+                        <div className="font-extrabold text-xl bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-pink-500">
                             Contact Us
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                        <CardDescription>
+                        </div>
+                    </div>
+                    <div className="space-y-4">
+                        <p>
                             We are always available to attend to your enquiries.
                             Please feel free to reach out to us.
-                        </CardDescription>
-                        <CardDescription>
+                        </p>
+                        <p>
                             You can contact us via the following options:
-                        </CardDescription>
-                        <CardDescription>
+                        </p>
+                        <div>
                             <ul className="space-y-4">
                                 <li>
                                     <strong>Phone Contact:</strong>{" "}
-                                    +2348164031725
-                                </li>
-                                <li>
-                                    <strong>Administrators:</strong>{" "}
-                                    +2347038675918
+                                    +2347050721579
                                 </li>
                                 <li>
                                     <strong>
                                         Speak with a postgraduate student:
                                     </strong>{" "}
-                                    +2347038675918
+                                    +2347050721579
                                 </li>
                             </ul>
-                        </CardDescription>
-                    </CardContent>
-                </Card>
+                        </div>
+                    </div>
+                </div>
                 <ContactUs />
             </section>
 

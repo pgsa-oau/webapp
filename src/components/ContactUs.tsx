@@ -12,12 +12,6 @@ import {
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { Textarea } from "../components/ui/textarea";
-import {
-    Card,
-    CardContent,
-    CardHeader,
-    CardTitle,
-} from "../components/ui/card";
 
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
@@ -60,14 +54,14 @@ const ContactUs = () => {
     }
 
     return (
-        <Card className="bg-transparent">
-            <CardHeader>
-                <CardTitle className="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-violet-600 to-pink-400">
+        <div className="bg-transparent">
+            <div>
+                <p className="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-violet-600 to-pink-400">
                     Reach out to us today!
-                </CardTitle>
-            </CardHeader>
+                </p>
+            </div>
 
-            <CardContent>
+            <div>
                 <Form {...form}>
                     <form
                         onSubmit={form.handleSubmit(onSubmit)}
@@ -117,6 +111,7 @@ const ContactUs = () => {
                                     <FormLabel>Message</FormLabel>
                                     <FormControl>
                                         <Textarea
+                                            className="min-h-52"
                                             placeholder="Type your message here."
                                             {...field}
                                         />
@@ -133,11 +128,18 @@ const ContactUs = () => {
                                 <div className="text-red-500">{feedback}</div>
                             ))}
 
-                        <Button variant='outline' size='lg' type="submit" className="text-white font-semibold">Submit</Button>
+                        <Button
+                            variant="outline"
+                            size="default"
+                            type="submit"
+                            className="text-white font-semibold"
+                        >
+                            Submit
+                        </Button>
                     </form>
                 </Form>
-            </CardContent>
-        </Card>
+            </div>
+        </div>
     );
 };
 
