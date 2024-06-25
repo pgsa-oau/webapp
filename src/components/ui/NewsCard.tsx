@@ -1,3 +1,4 @@
+import React from "react";
 
 interface NewsCardProps {
     title: string;
@@ -8,50 +9,40 @@ interface NewsCardProps {
     tag?: string;
 }
 
-const NewsCard = ({
-    title,
-    summary,
-    thumbnail,
-    author,
-    published_at,
-    tag,
-}: NewsCardProps) => {
-    const formattedDate = new Date(published_at).toLocaleDateString("en-US", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-    });
+const NewsCard = React.memo(
+    ({ title, summary, thumbnail, published_at }: NewsCardProps) => {
+        const formattedDate = React.useMemo(
+            () =>
+                new Date(published_at).toLocaleDateString("en-US", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                }),
+            [published_at]
+        );
 
-    return (
-        <div className="bg-white overflow-hidden border-b-4 border-purple-500 w-full rounded-lg shadow-sm hover:shadow-xl hover:border-purple-700 transition-shadow duration-300 ease-in-out">
-            <img
-                src={thumbnail}
-                alt={title}
-                className="w-full object-cover h-32 sm:h-48 md:h-64"
-            />
-            <div className="p-4 md:p-6 text-gray-900">
+        return (
+            <div className="flex flex-col gap-3 pb-3">
+                <div
+                    className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                    style={{
+                        backgroundImage: `url(${thumbnail})`,
+                    }}
+                ></div>
                 <div>
-                    <p className="text-purple-500 font-semibold text-xs mb-1 leading-none">
-                        {tag}
-                    </p>
-                    <h3 className="font-semibold mb-2 text-lg leading-tight sm:leading-normal">
+                    <p className="text-[#111618] text-base font-medium leading-normal overflow-hidden overflow-ellipsis whitespace-nowrap">
                         {title}
-                    </h3>
-                    <p className="text-sm leading-none mb-2 overflow-hidden overflow-ellipsis whitespace-nowrap">
+                    </p>
+                    <p className="leading-normal my-2 text-xs">
+                        {formattedDate}
+                    </p>
+                    <p className="text-[#607e8a] text-sm font-normal leading-normal overflow-hidden overflow-ellipsis whitespace-nowrap">
                         {summary}
                     </p>
                 </div>
-
-                <div className="text-sm flex items-center justify-between">
-                    <p className="leading-none">{author}</p>
-                    <div>
-                        <span></span>
-                        <p className="leading-none">{formattedDate}</p>
-                    </div>
-                </div>
             </div>
-        </div>
-    );
-};
+        );
+    }
+);
 
 export default NewsCard;
